@@ -1,0 +1,121 @@
+:root {
+    --primary-color: #2c3e50;
+    --primary-hover: #e67e22;
+    --background-color: #e6eef5;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* ===== UTILITIES ===== */
+.trap-bg-primary {
+    background-color: var(--primary-color);
+}
+
+.trap-bg-accent {
+    background-color: var(--primary-hover);
+}
+
+.trap-text-primary {
+    color: var(--primary-color);
+}
+
+.trap-text-accent {
+    color: var(--primary-hover);
+}
+
+/* ===== PROFILE CIRCLE ===== */
+.profile-circle {
+    aspect-ratio: 1/1;
+    max-width: 400px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--primary-hover) 40%, transparent);
+}
+
+/* ===== BUTTONS ===== */
+.btn-custom,
+.btn-custom-outline {
+    transition: all 0.3s ease;
+}
+
+.btn-custom {
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-custom-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-custom-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .dropdown-toggle:hover {
+    color: var(--primary-hover);
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: transparent;
+    color: var(--primary-hover);
+}
+
+.dropdown-menu .dropdown-item.active {
+    background-color: transparent;
+    color: var(--primary-hover);
+}
+
+.navbar .nav-link,
+.navbar .dropdown-toggle {
+    color: var(--primary-color);
+}
+
+.navbar .nav-link.active,
+.navbar .dropdown-toggle.active {
+    color: var(--primary-hover);
+}
+
+/* ===== ACCORDION ===== */
+.accordion-button:not(.collapsed) {
+    background-color: color-mix(in srgb, var(--primary-hover) 80%, white);
+    color: var(--primary-color);
+    box-shadow: none;
+}
+.accordion-button {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.accordion-button span:first-child {
+    min-width: 140px;
+    flex-shrink: 0;
+    color: var(--primary-color);
+}
+
+.accordion-button span:last-child {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-hover);
+}
+
+.accordion-button:not(.collapsed) span:last-child {
+    color: var(--primary-color);
+}
