@@ -4,8 +4,19 @@
     --background-color: #e6eef5;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main, section {
+    flex: 1;
 }
 
 /* ===== UTILITIES ===== */
@@ -118,4 +129,15 @@ body {
 
 .accordion-button:not(.collapsed) span:last-child {
     color: var(--primary-color);
+}
+
+/* ===== FOOTER ===== */
+.footer-icon {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icon:hover,
+.footer-icon:hover i {
+    color: var(--primary-hover);
+    transform: scale(1.1);
 }

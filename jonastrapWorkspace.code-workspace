@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../verzameling"
+		},
+		{
+			"path": "../project 2"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "jonastrapportfolio"
+	}
+}
