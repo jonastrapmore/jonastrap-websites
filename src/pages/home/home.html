@@ -1,0 +1,158 @@
+<custom-navbar></custom-navbar>
+
+<!-- Hero -->
+<section class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-lg-6 mb-3">
+      <h1 class="display-4 fw-bold trap-text-primary mb-3">Jonas Trap</h1>
+      <p class="fs-3 trap-text-accent mb-3">
+        <custom-typewriter words="Web Developer,Student,Full Stack in wording,ICT Manager"></custom-typewriter>
+      </p>
+      <p class="lead mb-4">
+        Overdag ICT-manager, 's avonds student. Ik leer programmeren en bouw deze website
+        helemaal zelf, van de eerste lijn code tot online.
+      </p>
+      <div class="d-flex flex-wrap gap-3">
+        <a href="/projecten" data-link="/projecten" class="btn btn-custom trap-bg-primary">Mijn projecten</a>
+        <a href="#opleiding" class="btn btn-custom trap-bg-primary">Mijn opleiding</a>
+        <a href="/contact" data-link="/contact" class="btn btn-custom trap-bg-primary">Contact</a>
+      </div>
+    </div>
+
+    <div class="col-lg-6 mb-3">
+      <div class="bg-light rounded text-center profile-circle rounded-circle mx-auto mt-4">
+        <img src="/img/profielfoto.jpg" class="img-fluid object-fit-cover" alt="Profielfoto van Jonas Trap">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Over mij -->
+<section class="container py-5 reveal">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <h2 class="fs-1 trap-text-primary mb-4 text-center">Over mij</h2>
+      <p class="mb-3">
+        Overdag stuur ik als <strong>ICT-manager</strong> mee de IT van mijn werk aan; 's avonds zit ik
+        terug in de schoolbanken. Sinds dit jaar volg ik in <strong>avondonderwijs</strong> het
+        <strong>graduaat Programmeren</strong> aan <strong>Thomas More in Geel</strong>. Ik zit momenteel
+        in mijn eerste jaar.
+      </p>
+      <p class="mb-3">
+        Deze website is mijn digitale etalage: hier verzamel ik alles wat ik tijdens de opleiding leer,
+        van mijn <a href="/projecten" data-link="/projecten"
+          class="trap-text-accent fw-semibold text-decoration-none">projecten</a>
+        tot de vakken die ik doorloop. De site zelf is trouwens <strong>volledig in TypeScript</strong>
+        geschreven. Leren door te doen.
+      </p>
+      <p class="mb-0">
+        Na drie jaar en met mijn diploma op zak wil ik als <strong>freelance webdeveloper in bijberoep</strong>
+        aan de slag. Met mijn achtergrond als <strong>netwerk-/systeembeheerder en manager</strong> begrijp ik
+        zowel de techniek als het bredere plaatje. Een combinatie waar ik sterk in geloof.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Cijfers -->
+<section class="container py-5">
+  <div class="row text-center g-4 mx-auto" style="max-width: 600px;">
+    <div class="col-4">
+      <div id="counter-projecten" class="display-3 fw-bold trap-text-accent counter" data-target="0">0</div>
+      <p class="text-muted mb-0">Projecten</p>
+    </div>
+    <div class="col-4">
+      <div id="counter-vakken" class="display-3 fw-bold trap-text-accent counter" data-target="0">0</div>
+      <p class="text-muted mb-0">Vakken</p>
+    </div>
+    <div class="col-4">
+      <div class="display-3 fw-bold trap-text-accent counter" data-target="3">0</div>
+      <p class="text-muted mb-0">Jaar</p>
+    </div>
+  </div>
+</section>
+
+<!-- Opleiding -->
+<section id="opleiding" class="container py-5">
+  <h2 class="fs-1 trap-text-primary mb-3 text-center">Mijn opleiding</h2>
+  <p class="text-muted text-center mb-4 mx-auto" style="max-width: 700px;">
+    Het graduaat Programmeren duurt drie jaar. Hieronder volg je mee welke vakken ik al behaald heb
+    en wat er nog op de planning staat. Deze lijst vinkt mee af naarmate ik vorder.
+  </p>
+
+  <!-- Voortgangsbalk (gevuld vanuit de data) -->
+  <div class="mb-5 mx-auto d-flex align-items-center gap-3" style="max-width: 700px;">
+    <span class="fw-semibold trap-text-primary">Voortgang</span>
+    <div class="progress flex-grow-1" role="progressbar" style="height: 12px;">
+      <div id="progress-bar" class="progress-bar trap-bg-accent" style="width: 0%;"></div>
+    </div>
+    <span id="progress-label" class="text-muted small text-nowrap"></span>
+  </div>
+
+  <div class="row g-4 justify-content-center cards-reveal">
+
+    <!-- 1e jaar -->
+    <div class="col-lg-4 reveal">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-header trap-bg-primary text-white d-flex justify-content-between align-items-center py-3">
+          <span class="fw-semibold">1e jaar</span>
+          <span class="badge bg-light trap-text-primary">Bezig</span>
+        </div>
+        <div id="year-1"></div>
+      </div>
+    </div>
+
+    <!-- 2e jaar -->
+    <div class="col-lg-4 reveal">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-header trap-bg-accent text-white d-flex justify-content-between align-items-center py-3">
+          <span class="fw-semibold">2e jaar</span>
+          <span class="badge bg-light trap-text-accent">Te volgen</span>
+        </div>
+        <div id="year-2"></div>
+      </div>
+    </div>
+
+    <!-- 3e jaar -->
+    <div class="col-lg-4 reveal">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-header trap-bg-accent text-white d-flex justify-content-between align-items-center py-3">
+          <span class="fw-semibold">3e jaar</span>
+          <span class="badge bg-light trap-text-accent">Te volgen</span>
+        </div>
+        <div id="year-3"></div>
+        <div class="card-body text-center text-muted">
+          <i class="bi bi-mortarboard-fill fs-3 trap-text-accent"></i>
+          <p class="small mb-0 mt-2">En dan: diploma &amp; freelance aan de slag!</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JavaScript-cursus -->
+<section class="py-5 trap-bg-primary text-white reveal">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <h2 class="fs-1 fw-bold mb-3">
+          <i class="bi bi-journal-code me-2"></i>Gratis JavaScript-cursus
+        </h2>
+        <p class="lead mb-0 opacity-75">
+          Tijdens mijn opleiding schreef ik een complete JavaScript-cursus in het Nederlands:
+          veertien modules, van je allereerste regel code tot een examen-eindoefening. In eigen
+          woorden, met moderne JavaScript, als opstap naar TypeScript. Helemaal gratis te lezen.
+        </p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a href="/javascriptcourse/" target="_blank" rel="noopener"
+           class="btn btn-lg btn-course fw-semibold">
+          Bekijk de cursus <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<custom-footer></custom-footer>
