@@ -1,0 +1,14 @@
+# SPA-fallback voor de Vite-router op jonastrap.be (Apache / LiteSpeed)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Bestaande bestanden en mappen gewoon serveren.
+  # Zo blijven je oude submappen (/project1/, /teslaoef/, /dragon/ ...) gewoon werken.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Al de rest doorsturen naar index.html, zodat de SPA-router het overneemt.
+  RewriteRule ^ /index.html [L]
+</IfModule>

@@ -1,0 +1,48 @@
+<custom-navbar></custom-navbar>
+<main class="container py-4 px-3 px-sm-5">
+  <h1 class="fs-1 trap-text-primary text-center mb-3">Projecten</h1>
+  <p class="text-muted text-center mb-4">
+    Eén overzicht van al mijn projecten. Filter op discipline, studiejaar of categorie, of zoek op titel.
+  </p>
+
+  <!-- Discipline-toggle. Een "both"-project verschijnt zowel onder Frontend als Backend. -->
+  <div class="d-flex justify-content-center mb-4">
+    <div class="btn-group" role="group" aria-label="Discipline">
+      <input type="radio" class="btn-check" name="discipline" id="disc-all" value="all" checked>
+      <label class="btn btn-outline-dark" for="disc-all">Alles</label>
+
+      <input type="radio" class="btn-check" name="discipline" id="disc-frontend" value="frontend">
+      <label class="btn btn-outline-dark" for="disc-frontend">Frontend</label>
+
+      <input type="radio" class="btn-check" name="discipline" id="disc-backend" value="backend">
+      <label class="btn btn-outline-dark" for="disc-backend">Backend</label>
+    </div>
+  </div>
+
+  <!-- Zoeken, studiejaar en categorie -->
+  <div class="row g-2 mb-4">
+    <div class="col-12 col-md">
+      <input id="search" type="search" class="form-control" placeholder="Zoek op titel...">
+    </div>
+    <div class="col-6 col-md-auto">
+      <select id="year-filter" class="form-select">
+        <option value="all">Alle jaren</option>
+        <option value="1">1e jaar</option>
+        <option value="2">2e jaar</option>
+        <option value="3">3e jaar</option>
+      </select>
+    </div>
+    <div class="col-6 col-md-auto">
+      <select id="category-filter" class="form-select">
+        <option value="all">Alle categorieën</option>
+        <option value="school">School</option>
+        <option value="zelfstudie">Zelfstudie</option>
+        <option value="examen">Examen</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Hier komt later de projectenlijst (<project-card> elementen). -->
+  <div id="projects" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 reveal"></div>
+</main>
+<custom-footer></custom-footer>

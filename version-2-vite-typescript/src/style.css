@@ -1,0 +1,310 @@
+/* Huisstijl van jonastrap.be, overgenomen uit de bestaande portfolio (css/main.css). */
+:root {
+  --primary-color: #2c3e50;
+  --primary-hover: #e67e22;
+  --background-color: #e6eef5;
+}
+
+[data-bs-theme="dark"] {
+  --background-color: #1a1d24;   /* diepe, koele donkergrijs als paginakleur */
+  --primary-color: #34465c;      /* iets lichtere navy: werkt als header-/footer-achtergrond op donker */
+  /* --primary-hover (#e67e22) blijft je accent; oranje knalt mooi op donker */
+}
+
+/* De navy is prima als ACHTERGROND, maar te donker als TEKST op een donkere pagina.
+   Daarom krijgt de tekst-variant in dark mode een lichte kleur (de achtergrond blijft navy). */
+[data-bs-theme="dark"] .trap-text-primary {
+  color: #e8edf3;
+}
+
+/* Frontend/Backend-toggle: oranje hover. Bootstrap zet bij toggle-knoppen (btn-check) de hover
+   bewust UIT via de regel `.btn-check + .btn:hover`, dus we overschrijven net die regel.
+   Alleen op apparaten met een echte muis (@media hover) — anders blijft de hover op touch "plakken"
+   en lijkt de geselecteerde knop op mobiel oranje. */
+@media (hover: hover) {
+  .btn-check + .btn-outline-dark:hover {
+    color: #fff;
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+  }
+}
+
+/* In dark mode een leesbare basis: lichte tekst + grijze rand, en een lichte vulling als geselecteerd. */
+[data-bs-theme="dark"] .btn-outline-dark {
+  --bs-btn-color: #e8edf3;
+  --bs-btn-border-color: #6c757d;
+  --bs-btn-active-color: #1a1d24;
+  --bs-btn-active-bg: #e8edf3;
+  --bs-btn-active-border-color: #e8edf3;
+}
+
+/* Status-badges op de card-headers: in dark mode een donkere frosted achtergrond met witte tekst.
+   Dat leest op élke headerkleur (navy bij 1e jaar, oranje bij 2e/3e jaar). */
+[data-bs-theme="dark"] .card-header .badge {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  color: #fff !important;
+}
+
+/* De navbar-tekst gebruikt de navy --primary-color; op de donkere navbar maken we die licht. */
+[data-bs-theme="dark"] .navbar-brand,
+[data-bs-theme="dark"] .navbar .nav-link {
+  color: #e8edf3;
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.tw-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: tw-blink 1s steps(1) infinite;
+}
+@keyframes tw-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Sticky footer: de pagina-wrapper (de div die het framework in #app plaatst)
+   vult minstens het hele scherm; main/section groeit zodat de footer onderaan blijft. */
+#app > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main,
+section {
+  flex: 1;
+}
+
+/* ===== UTILITIES ===== */
+.trap-bg-primary {
+  background-color: var(--primary-color);
+}
+
+.trap-bg-accent {
+  background-color: var(--primary-hover);
+}
+
+.trap-text-primary {
+  color: var(--primary-color);
+}
+
+.trap-text-accent {
+  color: var(--primary-hover);
+}
+
+/* ===== PROFILE CIRCLE ===== */
+.profile-circle {
+  aspect-ratio: 1/1;
+  max-width: 400px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px
+    color-mix(in srgb, var(--primary-hover) 40%, transparent);
+}
+
+/* ===== BUTTONS ===== */
+.btn-custom {
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-custom-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.btn-custom-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Witte CTA-knop op de donkere cursus-band: wordt bij hover accent (oranje),
+   net als de andere knoppen op de site. */
+.btn-course {
+  background-color: #fff;
+  color: var(--primary-color);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-course:hover {
+  background-color: var(--primary-hover);
+  color: #fff;
+}
+
+.ls-1 {
+  letter-spacing: 0.08em;
+}
+
+/* ===== PROJECT CARDS ===== */
+/* Layout draait nu via Bootstrap: row-cols op de container (#projects) en de
+   .col-klasse op elk <custom-project>-element. Deze ene regel laat de kaart de
+   volledige hoogte van zijn kolom vullen, zodat alle kaarten in een rij even hoog
+   zijn. De framework-wrapper rond de kaart zou die hoogteketen anders onderbreken. */
+custom-project > div {
+  height: 100%;
+}
+
+/* ===== COURSE ITEMS ===== */
+/* Elke <custom-course> is een rij; de framework-wrapper eronder wordt de flex-lijn
+   met het icoon links en de tekst rechts, met een scheidingslijntje per item. */
+custom-course > div {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+custom-course:last-child > div {
+  border-bottom: none;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-brand,
+.navbar .nav-link {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover,
+.navbar .nav-link:hover {
+  color: var(--primary-hover);
+}
+
+/* De thema-knop volgt dezelfde kleur en oranje hover als de nav-links (in beide thema's). */
+.navbar #theme-toggle {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.navbar #theme-toggle:hover {
+  color: var(--primary-hover);
+}
+
+[data-bs-theme="dark"] .navbar #theme-toggle {
+  color: #e8edf3;
+}
+
+[data-bs-theme="dark"] .navbar #theme-toggle:hover {
+  color: var(--primary-hover);
+}
+
+/* ===== FOOTER ===== */
+.footer-icon {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-icon:hover,
+.footer-icon:hover i {
+  color: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+/* ===== REVEAL ON SCROLL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cascade: kaarten in een groep verschijnen kort na elkaar i.p.v. allemaal tegelijk. */
+.cards-reveal > .reveal:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.cards-reveal > .reveal:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Enkel de projecten-grid: op mobiel meteen tonen (geen trage fade daar).
+   De home-secties houden hun reveal wél, ook op gsm. */
+@media (max-width: 767.98px) {
+  #projects.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Toegankelijkheid: wie "verminder beweging" aan heeft staan, krijgt alles meteen
+   zichtbaar, zonder de fade/slide-animatie. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Voortgangsbalk: een zichtbaar donkere baan + rand zodat het duidelijk een meter is. */
+.progress {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .progress {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+#progress-bar {
+  transition: width 1.2s ease;
+}
+
+/* ===== SCROLL TO TOP ===== */
+#scroll-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--primary-hover);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  z-index: 1030;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scroll-top:hover {
+  filter: brightness(0.9);
+}
+
+/* In dark mode geeft een donkere schaduw geen contrast; een zachte oranje gloed wel. */
+[data-bs-theme="dark"] #scroll-top {
+  box-shadow: 0 4px 16px rgba(230, 126, 34, 0.4);
+}
