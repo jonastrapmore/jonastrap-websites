@@ -46,6 +46,38 @@ export class ProjectsPage extends Page {
       </div>
     </div>`
 
+  // Uitgelichte TypeScript-cursus-kaart (naast de JavaScript-cursus).
+  readonly #typescriptCourseCardHTML = `
+    <div class="col">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="ratio ratio-16x9">
+          <div class="d-flex align-items-center justify-content-center" style="background:#3178c6;">
+            <i class="bi bi-journal-code" style="font-size:4rem; color:#fff;"></i>
+          </div>
+        </div>
+        <div class="card-body d-flex flex-column p-4">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <small class="text-muted">Eigen lesmateriaal</small>
+            <span class="badge text-bg-warning">Cursus</span>
+          </div>
+          <h5 class="card-title trap-text-primary mb-2">TypeScript Cursus</h5>
+          <p class="card-text flex-grow-1 text-muted mb-3">
+            Het vervolg op de JavaScript-cursus: van je eerste getypte variabele tot een volledige
+            component-app met een eigen router en data-persistentie.
+          </p>
+          <div class="d-flex flex-wrap gap-1 mb-3">
+            <span class="badge text-bg-light border">TypeScript</span>
+            <span class="badge text-bg-light border">20 modules</span>
+            <span class="badge text-bg-light border">Gratis</span>
+          </div>
+          <a href="/typescriptcourse/" target="_blank" rel="noopener"
+             class="btn btn-custom trap-bg-primary mt-auto align-self-start">
+            Open de cursus <i class="bi bi-box-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>`
+
   constructor() {
     super(HTML)
 
@@ -70,7 +102,7 @@ export class ProjectsPage extends Page {
 
   #renderList() {
     this.#container.innerHTML = ''
-    this.#container.insertAdjacentHTML('afterbegin', this.#courseCardHTML)
+    this.#container.insertAdjacentHTML('afterbegin', this.#courseCardHTML + this.#typescriptCourseCardHTML)
 
     const projects = this.#projects.filter(p => this.#matchesFilter(p))
 

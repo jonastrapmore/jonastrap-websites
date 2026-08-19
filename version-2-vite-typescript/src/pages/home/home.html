@@ -34,9 +34,9 @@
       <h2 class="fs-1 trap-text-primary mb-4 text-center">Over mij</h2>
       <p class="mb-3">
         Overdag stuur ik als <strong>ICT-manager</strong> mee de IT van mijn werk aan; 's avonds zit ik
-        terug in de schoolbanken. Sinds dit jaar volg ik in <strong>avondonderwijs</strong> het
-        <strong>graduaat Programmeren</strong> aan <strong>Thomas More in Geel</strong>. Ik zit momenteel
-        in mijn eerste jaar.
+        terug in de schoolbanken. Sinds september 2025 volg ik in <strong>avondonderwijs</strong> het
+        <strong>graduaat Programmeren</strong> aan <strong>Thomas More in Geel</strong>. Mijn eerste jaar
+        heb ik intussen afgerond; nu zit ik in mijn tweede jaar.
       </p>
       <p class="mb-3">
         Deze website is mijn digitale etalage: hier verzamel ik alles wat ik tijdens de opleiding leer,
@@ -56,16 +56,20 @@
 
 <!-- Cijfers -->
 <section class="container py-5">
-  <div class="row text-center g-4 mx-auto" style="max-width: 600px;">
-    <div class="col-4">
+  <div class="row text-center g-4 mx-auto" style="max-width: 760px;">
+    <div class="col-6 col-md-3">
       <div id="counter-projecten" class="display-3 fw-bold trap-text-accent counter" data-target="0">0</div>
       <p class="text-muted mb-0">Projecten</p>
     </div>
-    <div class="col-4">
+    <div class="col-6 col-md-3">
+      <div id="counter-cursussen" class="display-3 fw-bold trap-text-accent counter" data-target="0">0</div>
+      <p class="text-muted mb-0">Cursussen</p>
+    </div>
+    <div class="col-6 col-md-3">
       <div id="counter-vakken" class="display-3 fw-bold trap-text-accent counter" data-target="0">0</div>
       <p class="text-muted mb-0">Vakken</p>
     </div>
-    <div class="col-4">
+    <div class="col-6 col-md-3">
       <div class="display-3 fw-bold trap-text-accent counter" data-target="3">0</div>
       <p class="text-muted mb-0">Jaar</p>
     </div>
@@ -94,9 +98,9 @@
     <!-- 1e jaar -->
     <div class="col-lg-4 reveal">
       <div class="card border-0 shadow-sm h-100">
-        <div class="card-header trap-bg-primary text-white d-flex justify-content-between align-items-center py-3">
+        <div id="header-1" class="card-header trap-bg-primary text-white d-flex justify-content-between align-items-center py-3">
           <span class="fw-semibold">1e jaar</span>
-          <span class="badge bg-light trap-text-primary">Bezig</span>
+          <span id="status-1" class="badge bg-light trap-text-primary">Bezig</span>
         </div>
         <div id="year-1"></div>
       </div>
@@ -105,9 +109,9 @@
     <!-- 2e jaar -->
     <div class="col-lg-4 reveal">
       <div class="card border-0 shadow-sm h-100">
-        <div class="card-header trap-bg-accent text-white d-flex justify-content-between align-items-center py-3">
+        <div id="header-2" class="card-header trap-bg-accent text-white d-flex justify-content-between align-items-center py-3">
           <span class="fw-semibold">2e jaar</span>
-          <span class="badge bg-light trap-text-accent">Te volgen</span>
+          <span id="status-2" class="badge bg-light trap-text-accent">Te volgen</span>
         </div>
         <div id="year-2"></div>
       </div>
@@ -116,9 +120,9 @@
     <!-- 3e jaar -->
     <div class="col-lg-4 reveal">
       <div class="card border-0 shadow-sm h-100">
-        <div class="card-header trap-bg-accent text-white d-flex justify-content-between align-items-center py-3">
+        <div id="header-3" class="card-header trap-bg-accent text-white d-flex justify-content-between align-items-center py-3">
           <span class="fw-semibold">3e jaar</span>
-          <span class="badge bg-light trap-text-accent">Te volgen</span>
+          <span id="status-3" class="badge bg-light trap-text-accent">Te volgen</span>
         </div>
         <div id="year-3"></div>
         <div class="card-body text-center text-muted">
@@ -131,23 +135,35 @@
   </div>
 </section>
 
-<!-- JavaScript-cursus -->
+<!-- Gratis cursussen -->
 <section class="py-5 trap-bg-primary text-white reveal">
   <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-8">
-        <h2 class="fs-1 fw-bold mb-3">
-          <i class="bi bi-journal-code me-2"></i>Gratis JavaScript-cursus
-        </h2>
-        <p class="lead mb-0 opacity-75">
-          Tijdens mijn opleiding schreef ik een complete JavaScript-cursus in het Nederlands:
-          veertien modules, van je allereerste regel code tot een examen-eindoefening. In eigen
-          woorden, met moderne JavaScript, als opstap naar TypeScript. Helemaal gratis te lezen.
+    <h2 class="fs-1 fw-bold mb-2 text-center">
+      <i class="bi bi-journal-code me-2"></i>Gratis cursussen
+    </h2>
+    <p class="lead opacity-75 text-center mb-5">
+      Twee complete cursussen in het Nederlands die ik tijdens mijn opleiding schreef. Helemaal gratis.
+    </p>
+    <div class="row g-4 g-lg-5">
+      <div class="col-lg-6">
+        <h3 class="fw-bold mb-2">🟨 JavaScript-cursus</h3>
+        <p class="opacity-75 mb-3">
+          Van je allereerste regel code tot een examen-eindoefening: veertien modules in eigen
+          woorden, met moderne JavaScript. De ideale opstap naar TypeScript.
         </p>
-      </div>
-      <div class="col-lg-4 text-lg-end">
         <a href="/javascriptcourse/" target="_blank" rel="noopener"
-           class="btn btn-lg btn-course fw-semibold">
+           class="btn btn-course fw-semibold">
+          Bekijk de cursus <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <h3 class="fw-bold mb-2">🟦 TypeScript-cursus</h3>
+        <p class="opacity-75 mb-3">
+          Het vervolg: van je eerste getypte variabele tot een volledige component-app met een eigen
+          router en data-persistentie. Twintig modules, plus uitgewerkte oefenexamens.
+        </p>
+        <a href="/typescriptcourse/" target="_blank" rel="noopener"
+           class="btn btn-course fw-semibold">
           Bekijk de cursus <i class="bi bi-arrow-right"></i>
         </a>
       </div>

@@ -11,9 +11,20 @@
       <div class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
         <a class="nav-link" href="/" data-link="/">Over mij</a>
         <a class="nav-link" href="/projecten" data-link="/projecten">Projecten</a>
-        <a class="nav-link" href="/javascriptcourse/" target="_blank" rel="noopener">
-          <i class="bi bi-journal-code"></i> Cursus
-        </a>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi bi-journal-code"></i> Cursussen
+          </a>
+          <ul class="dropdown-menu dropdown-menu-lg-end">
+            <li>
+              <a class="dropdown-item" href="/javascriptcourse/" target="_blank" rel="noopener">🟨 JavaScript</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/typescriptcourse/" target="_blank" rel="noopener">🟦 TypeScript</a>
+            </li>
+          </ul>
+        </div>
         <a class="nav-link" href="/contact" data-link="/contact">Contact</a>
         <button id="theme-toggle" class="btn btn-sm fs-4" aria-label="Wissel thema">
           <i id="theme-icon" class="bi bi-moon-stars"></i>
